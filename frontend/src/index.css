@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hyperspeed-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, #000000 50%, transparent 80%),
+      repeating-linear-gradient(
+        to right,
+        #1e3a8a 0%,
+        #2563eb 10%,
+        #7dd3fc 20%,
+        transparent 25%
+      ),
+      radial-gradient(circle, transparent, #000000 70%);
+    background-size: cover, 200% 100%, cover;
+    animation: hyperspeed 5s linear infinite, hyperspeed-pulse 1.5s ease-in-out infinite;
+    z-index: 0;
+  }
+  
+  @keyframes hyperspeed {
+    from {
+      background-position: 0 0, 0 0, center;
+    }
+    to {
+      background-position: -200% 0, 100% 0, center;
+    }
+  }
+  
+  @keyframes hyperspeed-pulse {
+    0%, 100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
